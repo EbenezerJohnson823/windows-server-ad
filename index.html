@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Server 2022 AD Deployment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        img {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/Active-Directory.png" alt="Active Directory Logo">
+            <h1>Windows Server 2022 Active Directory Deployment</h1>
+        </div>
+        <p>This project demonstrates the deployment of an <strong>Active Directory (AD) domain</strong> using <strong>Windows Server 2022</strong> within a virtualized environment.</p>
+        
+        <h2>Objectives</h2>
+        <ul>
+            <li>Deploy two Windows Server 2022 VMs in <strong>Hyper-V</strong></li>
+            <li>Assign static IP addresses to both servers</li>
+            <li>Promote <strong>WinServer22VM-DC1</strong> as the Primary Domain Controller</li>
+            <li>Join <strong>WinServer22VM-DC2</strong> to the domain and promote it as a Backup Domain Controller</li>
+            <li>Configure <strong>Organizational Units (OUs)</strong> and user accounts</li>
+            <li>Configure <strong>Group Policy Objects (GPOs)</strong> for user management</li>
+            <li>Implement <strong>folder redirection</strong> for user profiles</li>
+            <li>Set up <strong>drive mapping</strong> to centralized shared folders</li>
+            <li>Test <strong>failover and AD replication</strong></li>
+        </ul>
+        
+        <h2>1. Deploy Two Windows Server 2022 VMs in Hyper-V</h2>
+        <p>Two virtual machines were created using Hyper-V to serve as domain controllers.</p>
+        <img src="img/screenshots/VM1_Summary.png" alt="Hyper-V VM Setup">
+        <img src="img/screenshots/VM1_ServerOS1.png" alt="Hyper-V VM Setup">
+        <img src="img/screenshots/VM2_summary.png" alt="Hyper-V VM Setup">
+        <img src="img/screenshots/VM2_ServerOS1.png" alt="Hyper-V VM Setup">
+        <img src="img/screenshots/VMs_In_Hyper-V.png" alt="Hyper-V VM Setup">
+        
+        <h2>2. Assign Static IP Addresses</h2>
+        <p>Static IPs were configured to ensure network stability.</p>
+        <img src="img/screenshots/VM1_IP.png" alt="Static IP Configuration">
+        <img src="img/screenshots/VM2_IP.png" alt="Static IP Configuration">
+        
+        <h2>3. Promote WinServer22VM-DC1 as the Primary Domain Controller</h2>
+        <p>Active Directory Domain Services (AD DS) was installed and configured.</p>
+        <img src="img/screenshots/VM1_AD.png" alt="Promote DC1 to Domain Controller">
+        <img src="img/screenshots/VM1_DC_Promotion.png" alt="Promote DC1 to Domain Controller">
+        <img src="img/screenshots/promote-dc1.png" alt="Promote DC1 to Domain Controller">
+        
+        <h2>4. Join WinServer22VM-DC2 to the Domain and Promote it as a Backup DC</h2>
+        <p>WS2022-DC2 was added to the domain and set as a backup domain controller.</p>
+        <img src="img/screenshots/VM2_AD.png" alt="Join WS2022-DC2 to the domain">
+        <img src="img/screenshots/promote-dc2.png" alt="Join WS2022-DC2 to the domain">
+        
+        <h2>5. Configure Organizational Units (OUs) and User Accounts</h2>
+        <p>Departments were structured using Organizational Units (OUs), and sample users were created.</p>
+        <img src="img/screenshots/ou-setup.png" alt="OU and User Account Setup">
+        <img src="img/screenshots/user-account-setup.png" alt="OU and User Account Setup">
+        <img src="img/screenshots/user-accounts.png" alt="OU and User Account Setup">
+        
+        <h2>6. Configure Group Policy Objects (GPOs) for User Management</h2>
+        <p>GPOs were implemented to enforce policies across the domain.</p>
+        <img src="img/screenshots/gpo-setup.jpg" alt="Group Policy Management">
+        <img src="img/screenshots/user-policies.jpg" alt="Group Policy Management">
+        
+        <h2>7. Implement Folder Redirection</h2>
+        <p>User profiles were redirected to a centralized server location.</p>
+        <img src="img/screenshots/folder-redirection.png" alt="Folder Redirection Configuration">
+        
+        <h2>8. Set Up Drive Mapping</h2>
+        <p>Users were automatically connected to a shared drive.</p>
+        <img src="img/screenshots/drive-mapping.png" alt="Drive Mapping Setup">
+        <img src="img/screenshots/mapped-drive-n-folder-redirection.png" alt="Drive Mapping Setup">
+
+        
+        <h2>9. Test Failover and AD Replication</h2>
+        <p>Domain failover and replication between WinServer22VM-DC1 and WinServer22VM-DC2 were tested.</p>
+        <img src="img/screenshots/failover-testing.png" alt="Testing Failover and AD Replication">
+        
+        <h2>Conclusion</h2>
+        <p>This project successfully deployed a <strong>scalable, secure, and user-friendly Active Directory environment</strong> leveraging Windows Server 2022.</p>
+        <p><strong>Technologies Used:</strong> Windows Server 2022, Hyper-V, Active Directory, Group Policy, Remote Desktop Services.</p>
+    </div>
+</body>
+</html>
+
